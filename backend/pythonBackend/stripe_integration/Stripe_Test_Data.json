@@ -1,0 +1,78 @@
+{
+	"id": "stripe-test-data",
+	"name": "Stripe Test Data",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "stripe_secret_key",
+			"value": "sk_test_YOUR_STRIPE_SECRET_KEY_HERE",
+			"type": "secret",
+			"enabled": true,
+			"description": "Replace with your actual Stripe test secret key from dashboard"
+		},
+		{
+			"key": "test_payment_method_id",
+			"value": "pm_card_visa",
+			"type": "default",
+			"enabled": true,
+			"description": "Stripe test payment method token for successful Visa payments"
+		},
+		{
+			"key": "test_payment_method_mastercard",
+			"value": "pm_card_mastercard",
+			"type": "default",
+			"enabled": true,
+			"description": "Stripe test payment method token for successful Mastercard payments"
+		},
+		{
+			"key": "test_payment_method_declined",
+			"value": "pm_card_chargeDeclined",
+			"type": "default",
+			"enabled": true,
+			"description": "Stripe test payment method token that always gets declined"
+		},
+		{
+			"key": "test_payment_method_insufficient_funds",
+			"value": "pm_card_insufficient_funds",
+			"type": "default",
+			"enabled": true,
+			"description": "Stripe test payment method token for insufficient funds error"
+		},
+		{
+			"key": "declined_payment_method_id",
+			"value": "pm_0987654321fedcba",
+			"type": "default",
+			"enabled": true,
+			"description": "Declined test payment method ID for error testing"
+		},
+		{
+			"key": "stripe_customer_id",
+			"value": "cus_test123456789",
+			"type": "default",
+			"enabled": true,
+			"description": "Stripe customer ID - will be created by your API"
+		},
+		{
+			"key": "user_id",
+			"value": "user_test123456789",
+			"type": "default",
+			"enabled": true,
+			"description": "Your app's user ID - will be created by your API"
+		},
+		{
+			"key": "transaction_id",
+			"value": "txn_test123456789",
+			"type": "default",
+			"enabled": true,
+			"description": "Transaction ID - will be created by purchase endpoint"
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-01-01T00:00:00.000Z",
+	"_postman_exported_using": "Postman/10.0.0"
+}

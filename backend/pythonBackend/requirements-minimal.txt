@@ -1,0 +1,29 @@
+# Minimal requirements for FastAPI Backend with Strands AI
+
+# Core web framework
+fastapi==0.118.3
+uvicorn==0.37.0
+
+# Database
+motor==3.7.1
+pymongo==4.15.3
+
+# Environment
+python-dotenv==1.1.1
+pydantic==2.12.0
+
+# AWS and Strands AI
+boto3==1.40.50
+strands-agents==1.12.0
+strands-agents-builder==0.1.10
+strands-agents-tools==0.2.11
+
+# HTTP
+httpx==0.28.1
+requests==2.32.5
+
+# Basic utilities
+anyio==4.11.0
+h11==0.16.0
+python-dateutil==2.9.0.post0
+typing_extensions==4.15.0

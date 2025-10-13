@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "stripe-currency-test-collection",
+		"name": "Stripe Currency Purchase Test Collection",
+		"description": "Complete test collection for Stripe currency purchase system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Get Available Packages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stripe/packages",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"packages"
+					]
+				},
+				"description": "Get all available currency packages"
+			},
+			"response": []
+		},
+		{
+			"name": "2. Create Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    const response = pm.response.json();",
+							"    pm.environment.set('user_id', response.user_id);",
+							"    pm.environment.set('stripe_customer_id', response.stripe_customer_id);",
+							"    console.log('User ID saved:', response.user_id);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@example.com\",\n    \"name\": \"Test Customer\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/stripe/create-customer",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"create-customer"
+					]
+				},
+				"description": "Create a new customer and get user_id for subsequent requests"
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get Customer Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stripe/customer/{{user_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"customer",
+						"{{user_id}}"
+					]
+				},
+				"description": "Get customer information and current currency balance"
+			},
+			"response": []
+		},
+		{
+			"name": "4. Attach Payment Method (Test Token)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    console.log('Payment method attached successfully');",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{user_id}}\",\n    \"payment_method_id\": \"{{test_payment_method_id}}\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/stripe/attach-payment-method",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"attach-payment-method"
+					]
+				},
+				"description": "Attach a Stripe test payment method token to the customer. Uses pm_card_visa for successful payments. In production, this would come from Stripe.js frontend integration."
+			},
+			"response": []
+		},
+		{
+			"name": "5. Purchase Currency - Starter Pack",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    const response = pm.response.json();",
+							"    pm.environment.set('transaction_id', response.transaction_id);",
+							"    console.log('Purchase successful!');",
+							"    console.log('Currency purchased:', response.currency_purchased);",
+							"    console.log('New balance:', response.new_balance);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{user_id}}\",\n    \"package_id\": \"package_1\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/stripe/purchase-currency",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"purchase-currency"
+					]
+				},
+				"description": "Purchase 100 coins for $10 (Starter Pack)"
+			},
+			"response": []
+		},
+		{
+			"name": "6. Purchase Currency - Popular Pack",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    const response = pm.response.json();",
+							"    console.log('Purchase successful!');",
+							"    console.log('Currency purchased:', response.currency_purchased);",
+							"    console.log('New balance:', response.new_balance);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{user_id}}\",\n    \"package_id\": \"package_2\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/stripe/purchase-currency",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"purchase-currency"
+					]
+				},
+				"description": "Purchase 300 coins for $25 (Popular Pack)"
+			},
+			"response": []
+		},
+		{
+			"name": "7. Purchase Currency - Premium Pack",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    const response = pm.response.json();",
+							"    console.log('Purchase successful!');",
+							"    console.log('Currency purchased:', response.currency_purchased);",
+							"    console.log('New balance:', response.new_balance);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{user_id}}\",\n    \"package_id\": \"package_3\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/stripe/purchase-currency",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"purchase-currency"
+					]
+				},
+				"description": "Purchase 700 coins for $50 (Premium Pack)"
+			},
+			"response": []
+		},
+		{
+			"name": "8. Get Updated Customer Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stripe/customer/{{user_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"customer",
+						"{{user_id}}"
+					]
+				},
+				"description": "Check customer's updated currency balance after purchases"
+			},
+			"response": []
+		},
+		{
+			"name": "9. Get Transaction History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stripe/transactions/{{user_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"transactions",
+						"{{user_id}}"
+					]
+				},
+				"description": "Get complete purchase history for the customer"
+			},
+			"response": []
+		},
+		{
+			"name": "10. Test Error - Invalid Package",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"{{user_id}}\",\n    \"package_id\": \"invalid_package\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/stripe/purchase-currency",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"purchase-currency"
+					]
+				},
+				"description": "Test error handling with invalid package ID"
+			},
+			"response": []
+		},
+		{
+			"name": "11. Test Error - Invalid User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stripe/customer/invalid-user-id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stripe",
+						"customer",
+						"invalid-user-id"
+					]
+				},
+				"description": "Test error handling with invalid user ID"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
