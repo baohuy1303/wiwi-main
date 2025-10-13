@@ -18,12 +18,7 @@ Everyone wins.
 - ❤️ **Built-in Charity**: Excess proceeds automatically go to charity (70%)
 - ⚖️ **Fair & Transparent**: Automated winner selection, no human manipulation
 - 🔒 **Enterprise-Grade Security**: AWS Bedrock + Stripe PCI compliance
-
-![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
-![Python](https://img.shields.io/badge/python-%3E%3D3.9-blue)
-![React](https://img.shields.io/badge/react-18.3.1-61dafb)
-![AWS](https://img.shields.io/badge/AWS-Bedrock-orange)
-![Strands AI](https://img.shields.io/badge/Strands-AI%20Agents-purple)
+- 
 
 ## ⚡ Tech Stack at a Glance (More information in Tech&Install.md)
 
