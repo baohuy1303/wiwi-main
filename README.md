@@ -18,7 +18,7 @@ Everyone wins.
 - ❤️ **Built-in Charity**: Excess proceeds automatically go to charity (70%)
 - ⚖️ **Fair & Transparent**: Automated winner selection, no human manipulation
 - 🔒 **Enterprise-Grade Security**: AWS Bedrock + Stripe PCI compliance
-- 
+
 
 ## ⚡ Tech Stack at a Glance (More information in Tech&Install.md)
 
