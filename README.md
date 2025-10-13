@@ -332,6 +332,6 @@ This architecture can be adapted for:
 ---
 
 ### ⭐ Star this repo if you find it useful!
-## 🔍 More information in Tech&Install.md
+🔍 More information in Tech&Install.md
 
 
