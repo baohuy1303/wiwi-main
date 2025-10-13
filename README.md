@@ -25,7 +25,7 @@ Everyone wins.
 ![AWS](https://img.shields.io/badge/AWS-Bedrock-orange)
 ![Strands AI](https://img.shields.io/badge/Strands-AI%20Agents-purple)
 
-## ⚡ Tech Stack at a Glance (More info in a section below)
+## ⚡ Tech Stack at a Glance (More information in Tech&Install.md)
 
 ```
 🎨 Frontend              ⚙️ Backend                🤖 AI Layer              💾 Data
@@ -67,7 +67,7 @@ Stripe.js                Node-Cron                 Custom Agent Tools
 
 ---
 
-## 🚀 Quick Start for Developers
+## 🚀 Quick Start for Developers (More information in Tech&Install.md)
 
 ```bash
 # 1. Clone and install
@@ -79,7 +79,7 @@ cd frontend && npm install && npm run dev          # Frontend: http://localhost:
 cd server && npm install && node index.js          # Node API: http://localhost:3000
 cd backend/pythonBackend && pip install -r requirements.txt && uvicorn main:app --reload
 
-# 3. Setup .env files (see Installation section for details)
+# 3. Setup .env files (see Tech&Install.md)
 # 4. Visit http://localhost:5173 and start raffling!
 ```
 
@@ -337,5 +337,6 @@ This architecture can be adapted for:
 ---
 
 ### ⭐ Star this repo if you find it useful!
+## 🔍 More information in Tech&Install.md
 
 
