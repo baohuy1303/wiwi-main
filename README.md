@@ -9,7 +9,7 @@ It’s a marketplace and raffle hybrid — sellers earn more money through overf
 
 Everyone wins.
 
-**Made in 24 hours for HackMidWest** ([📼 Video Demo 📼](https://drive.google.com/drive/folders/1xnEEv0FrlMwqAj7D-fIjqQqRQlQlnvhT?usp=sharing))
+**Made in 24 hours for HackMidWest** ([📼 Very rushed video demo 📼](https://drive.google.com/drive/folders/1xnEEv0FrlMwqAj7D-fIjqQqRQlQlnvhT?usp=sharing))
 
 ### Why WIWI?
 - 💰 **High revenue for used items**: Sell your used items at higher value through ticket-based raffles. Overflow revenue = more profit.
