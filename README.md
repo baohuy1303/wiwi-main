@@ -328,6 +328,12 @@ This architecture can be adapted for:
 - **Resale Platforms**: Authenticate luxury goods (watches, bags, etc.)
 - **Content Moderation**: Detect inappropriate/fake images
 
+---
+## 👥 Authors
+- Huy B. Huynh https://github.com/baohuy1303
+- James Calder https://github.com/jcxldxr816
+- Roshan Thapa Magar https://github.com/rosnMagar
+- Shibam Pokhrel https://github.com/shibampokerail
 
 ---
 
