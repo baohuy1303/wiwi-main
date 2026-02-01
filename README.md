@@ -11,9 +11,9 @@ Everyone wins.
 
 **Made in 24 hours for HackMidWest** ([Very rushed video demo](https://drive.google.com/drive/folders/1xnEEv0FrlMwqAj7D-fIjqQqRQlQlnvhT?usp=sharing))
 
-![Screenshot](https://github.com/baohuy1303/wiwi-main/blob/main/wiwi-main/public/wiwi-logo.png)
+![Screenshot](https://github.com/baohuy1303/wiwi-main/blob/main/frontend/public/screenshots/WIWI2.png?raw=true)
 
-![Screenshot](https://github.com/baohuy1303/wiwi-main/blob/main/wiwi-main/public/wiwi-logo.png)
+![Screenshot](https://raw.githubusercontent.com/baohuy1303/wiwi-main/refs/heads/main/frontend/public/screenshots/WIWI3.jfif)
 
 ### Why WIWI?
 - **High revenue for used items**: Sell your used items at higher value through ticket-based raffles. Overflow revenue = more profit.
