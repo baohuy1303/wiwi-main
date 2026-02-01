@@ -1,0 +1,9 @@
+test_name,email,name,package_id,expected_currency,expected_price,card_number,exp_month,exp_year,cvc,expected_result
+"Successful Purchase - Starter Pack","test1@example.com","Test Customer 1","package_1","100","1000","4242424242424242","12","2025","123","success"
+"Successful Purchase - Popular Pack","test2@example.com","Test Customer 2","package_2","300","2500","4242424242424242","12","2025","123","success"
+"Successful Purchase - Premium Pack","test3@example.com","Test Customer 3","package_3","700","5000","4242424242424242","12","2025","123","success"
+"Declined Card Test","declined@example.com","Declined Customer","package_1","0","1000","4000000000000002","12","2025","123","declined"
+"Insufficient Funds Test","insufficient@example.com","Insufficient Customer","package_2","0","2500","4000000000009995","12","2025","123","declined"
+"Invalid Package Test","invalid@example.com","Invalid Package Customer","invalid_package","0","0","4242424242424242","12","2025","123","error"
+"Mastercard Test","mastercard@example.com","Mastercard Customer","package_1","100","1000","5555555555554444","12","2025","123","success"
+"Visa Debit Test","visadebit@example.com","Visa Debit Customer","package_2","300","2500","4000056655665556","12","2025","123","success"
